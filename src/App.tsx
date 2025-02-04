@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DocumentViewer from "./components/DocViewer";
 import PDFViewerDemo from "./components/PDFViewer";
+import pdfFile from './assets/proxy-pdf.pdf'
 
 export default function App() {
   const [viewer, setViewer] = useState("pdf");
@@ -23,7 +24,7 @@ export default function App() {
       </div>
 
       {viewer === "pdf" ? (
-        <PDFViewerDemo pdfUrl="http://localhost:3001/proxy-pdf?url=https://icseindia.org/document/sample.pdf" />
+        <PDFViewerDemo pdfUrl={pdfFile} />
       ) : (
         <DocumentViewer docUrl="https://calibre-ebook.com/downloads/demos/demo.docx" />
       )}
